@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch, Link} from 'react-router-dom'
+import Home from './views/Home'
+import Adoptar from './views/Adoptar'
+import Gatos from './views/Gatos'
 import './App.css';
 
 function App() {
+
+  // forms en react 
+  // hooks custom para formularios
+  // destructuring y ES6 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      
+      <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/adoptar/" component={Adoptar} />
+        <Route path="/gatos" component={Gatos} />
+      </Switch>
+        
+        <footer>HOLA SOY EL FOOTER</footer>
+
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
